@@ -11,12 +11,16 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
   console.log(`/about`);
-  res.json({ info: 'web-container', version: 0.1, env: process.env });
+  res.json({ label: 'web-container' });
 });
 
 app.get('/help', (req, res) => {
   console.log(`/help`);
   res.json({ url: 'https://stackblitz.com/edit/express-simple-sxln6g' });
+});
+app.get('/info', (req, res) => {
+  console.log(`/info`);
+  res.json({ version: 0.1, env: process.env });
 });
 
 app.listen(port, () => {
